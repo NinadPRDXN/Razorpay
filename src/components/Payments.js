@@ -50,7 +50,12 @@ const Payments = () => {
 
     useEffect(() => {
         async function requestApi() {
-            await axios.get('https://api.razorpay.com/v1/payments',
+            await axios.get('https://api.razorpay.com/v1/payments', {
+                header: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                }
+            },
             {
                 auth: {
                 username: 'rzp_test_Mnn7X4p5fG6fBP',
